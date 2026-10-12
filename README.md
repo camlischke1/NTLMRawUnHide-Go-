@@ -18,8 +18,12 @@ go run main.go -i <inputfile> [-o <outputfile>] [-f] [-h] [-q] [-v]
 or build and run:
 
 ```bash
-go build -o NTLMRawUnHide
-./NTLMRawUnHide -i <inputfile> [-o <outputfile>] [-f] [-h] [-q] [-v]
+go build .
+
+# or build for windows
+GOOS=windows GOARCH=amd64 go build -o ntlmrawunhide.exe .
+
+./ntlmrawunhide -i <inputfile> [-o <outputfile>] [-f] [-h] [-q] [-v]
 ```
 
 ## Options
@@ -35,12 +39,12 @@ go build -o NTLMRawUnHide
 
 ### Basic extraction:
 ```bash
-./NTLMRawUnHide -i capture.pcap
+./ntlmrawunhide -i capture.pcap
 ```
 
 ### Extract to output file:
 ```bash
-./NTLMRawUnHide -i capture.pcap -o hashes.txt
+./ntlmrawunhide -i capture.pcap -o hashes.txt
 ```
 
 
